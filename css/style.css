@@ -1009,6 +1009,12 @@ section {
   color: white;
   text-align: center;
   padding: 2rem 0;
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .footer {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
 }
 
 .footer-content p {
