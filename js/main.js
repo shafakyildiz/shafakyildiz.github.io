@@ -35,6 +35,7 @@ class Navigation {
     this.handleThemeToggle();
     this.handleSmoothScroll();
     this.handleActiveLink();
+    this.handleScrollArrow();
   }
 
   handleScroll() {
@@ -139,6 +140,22 @@ class Navigation {
         }
       });
     });
+  }
+
+  handleScrollArrow() {
+    const scrollArrow = document.getElementById("scroll-arrow");
+    if (scrollArrow) {
+      scrollArrow.addEventListener("click", () => {
+        const aboutSection = document.getElementById("about");
+        if (aboutSection) {
+          const offsetTop = aboutSection.offsetTop - 80;
+          window.scrollTo({
+            top: offsetTop,
+            behavior: "smooth",
+          });
+        }
+      });
+    }
   }
 }
 

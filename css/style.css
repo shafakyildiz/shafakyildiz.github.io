@@ -437,6 +437,13 @@ body {
   border-right: none;
   transform: rotate(-45deg);
   animation: bounce-arrow 2s infinite;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.scroll-arrow:hover {
+  border-color: var(--primary-color);
+  transform: rotate(-45deg) scale(1.1);
 }
 
 @keyframes bounce-arrow {
