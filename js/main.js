@@ -328,6 +328,21 @@ class ContactForm {
     this.form.addEventListener("submit", (e) => {
       e.preventDefault();
 
+      // Validate all fields before submitting
+      const inputs = this.form.querySelectorAll("input, textarea");
+      let isValid = true;
+
+      inputs.forEach((input) => {
+        if (!this.validateField(input)) {
+          isValid = false;
+        }
+      });
+
+      if (!isValid) {
+        this.showMessage("Please fix the errors above", "error");
+        return;
+      }
+
       // Get form data
       const formData = new FormData(this.form);
       const data = Object.fromEntries(formData);
@@ -338,14 +353,30 @@ class ContactForm {
       submitBtn.textContent = "Sending...";
       submitBtn.disabled = true;
 
-      // Simulate form submission
-      setTimeout(() => {
-        this.showMessage("Message sent successfully!", "success");
-        this.form.reset();
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-      }, 2000);
+      // Send email using EmailJS
+      this.sendEmail(data, submitBtn, originalText);
     });
+  }
+
+  sendEmail(data, submitBtn, originalText) {
+    // Create mailto link as a simple solution
+    const subject = encodeURIComponent(data.subject);
+    const body = encodeURIComponent(
+      `Name: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`
+    );
+    const mailtoLink = `mailto:safakyildiz95@gmail.com?subject=${subject}&body=${body}`;
+
+    // Open default email client
+    window.location.href = mailtoLink;
+
+    // Show success message
+    this.showMessage(
+      "Opening your email client... Please send the email to complete the process.",
+      "success"
+    );
+    this.form.reset();
+    submitBtn.textContent = originalText;
+    submitBtn.disabled = false;
   }
 
   handleValidation() {
