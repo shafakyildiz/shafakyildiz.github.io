@@ -1,106 +1,522 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<title>Safak Yildiz</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Safak Yildiz - Software Engineer</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="Safak Yildiz - Solution-oriented Software Engineer specializing in .NET, Node.js, Angular, React, Vue, and Python"
+    />
+    <meta
+      name="keywords"
+      content="Software Engineer, Full Stack Developer, .NET, Node.js, Angular, React, Vue, Python, Portfolio"
+    />
+    <meta name="author" content="Safak Yildiz" />
 
-	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
 
-	<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-	<link rel="stylesheet" href="css/animate.css">
-
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<link rel="stylesheet" href="css/magnific-popup.css">
-
-	<link rel="stylesheet" href="css/aos.css">
-
-	<link rel="stylesheet" href="css/ionicons.min.css">
-
-	<link rel="stylesheet" href="css/bootstrap-datepicker.css">
-	<link rel="stylesheet" href="css/jquery.timepicker.css">
-
-
-	<link rel="stylesheet" href="css/flaticon.css">
-	<link rel="stylesheet" href="css/icomoon.css">
-	<link rel="stylesheet" href="css/style.css">
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="css/aos.css" />
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
+    <!-- Loading Screen -->
+    <div id="loader" class="loader">
+      <div class="loader-content">
+        <div class="loader-logo">
+          <span class="logo-text">S</span>
+        </div>
+        <div class="loader-progress">
+          <div class="progress-bar"></div>
+        </div>
+      </div>
+    </div>
 
-	<div id="colorlib-page">
-		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
-		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
-			<h1 id="colorlib-logo"><a href="#">safak<span>.</span></a></h1>
-			<nav id="colorlib-main-menu" role="navigation">
-				<ul>
-					<li class="colorlib-active"><a href="index.html">Home</a></li>
-					<li><a href="https://medium.com/@safakyildiz">Blog</a></li>
-				</ul>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <a href="#home">Safak<span>.</span></a>
+        </div>
+        <div class="nav-menu" id="nav-menu">
+          <a href="#home" class="nav-link active">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#experience" class="nav-link">Experience</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+        <div class="nav-toggle" id="nav-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <div class="theme-toggle" id="theme-toggle">
+          <i class="fas fa-moon"></i>
+        </div>
+      </div>
 			</nav>
 
-		</aside>
-		<div id="colorlib-main">
-			<div class="hero-wrap js-fullheight" style="background-image: url(images/bg_3.jpg);"
-				data-stellar-background-ratio="0.5">
-				<div class="overlay"></div>
-				<div class="js-fullheight d-flex justify-content-center align-items-center">
-					<div class="col-md-8 text text-center">
-						<div class="img mb-4" style="background-image: url(images/author.jpg);"></div>
-						<div class="desc">
-							<h2 class="subheading">Hello I'm</h2>
-							<h1 class="mb-4">Safak Yildiz</h1>
-							<p class="mb-4">I am a solution-oriented Software Engineer, curious about different
-								technologies, learning every day. My main tech stack is .NET, Node, Angular, React,
-								Vue. Also developed applications in Python. Dog person, mamba mentality.</p>
-							<ul class="ftco-social mt-3">
-								<li class="ftco-animate"><a href="https://twitter.com/shafakyildiz"><span
-											class="icon-twitter"></span></a></li>
-								<li class="ftco-animate"><a href="https://linkedin.com/in/safakyildiz"><span
-											class="icon-linkedin"></span></a></li>
-								<li class="ftco-animate"><a href="https://www.instagram.com/shafakyildiz/"><span
-											class="icon-instagram"></span></a></li>
-								<li class="ftco-animate"><a href="https://medium.com/@safakyildiz"><span
-											class="icon-medium"></span></a></li>
-							</ul>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <canvas class="particles" id="particles"></canvas>
+      <div class="hero-content">
+        <div class="hero-text" data-aos="fade-up" data-aos-duration="1000">
+          <h1 class="hero-title">
+            <span class="greeting">Hello, I'm</span>
+            <span class="name">Safak Yildiz</span>
+            <span class="title">Software Engineer</span>
+          </h1>
+          <p class="hero-description">
+            Solution-oriented Software Engineer with 3+ years of experience in full-stack development. 
+            Specialized in React, .NET, Node.js, and mobile development with React Native and Flutter.
+          </p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+          </div>
+        </div>
+        <div class="hero-image" data-aos="fade-left" data-aos-duration="1000">
+          <div class="image-container">
+            <img
+              src="images/author.jpg"
+              alt="Safak Yildiz"
+              class="profile-image"
+            />
+            <div class="image-glow"></div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <div class="scroll-arrow"></div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">About Me</h2>
+          <p class="section-subtitle">Get to know me better</p>
+        </div>
+        <div class="about-content">
+          <div class="about-text" data-aos="fade-right" data-aos-duration="800">
+            <h3>I'm a passionate Software Engineer</h3>
+            <p>
+              I am a solution-oriented Software Engineer with 3+ years of experience in full-stack development. 
+              I hold a Master's degree in Software Engineering from Hacettepe University and have worked at 
+              companies like Limak Technology, Huawei, and Arksoft. I specialize in React, .NET, Node.js, 
+              and mobile development with React Native and Flutter. I'm passionate about creating innovative 
+              solutions and continuously learning new technologies.
+            </p>
+            <div class="about-stats">
+              <div class="stat-item">
+                <span class="stat-number" data-count="50">0</span>
+                <span class="stat-label">Projects Completed</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" data-count="3">0</span>
+                <span class="stat-label">Years Experience</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" data-count="100">0</span>
+                <span class="stat-label">Happy Clients</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-image" data-aos="fade-left" data-aos-duration="800">
+            <div class="image-wrapper">
+              <img src="images/author.jpg" alt="Safak Yildiz" />
+              <div class="image-overlay">
+                <div class="social-links">
+                  <a href="https://twitter.com/shafakyildiz" target="_blank"
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+                  <a href="https://linkedin.com/in/safakyildiz" target="_blank"
+                    ><i class="fab fa-linkedin"></i
+                  ></a>
+                  <a
+                    href="https://www.instagram.com/shafakyildiz/"
+                    target="_blank"
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                  <a href="https://medium.com/@safakyildiz" target="_blank"
+                    ><i class="fab fa-medium"></i
+                  ></a>
+                  <a href="https://github.com/safakyildiz" target="_blank"
+                    ><i class="fab fa-github"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">Skills & Technologies</h2>
+          <p class="section-subtitle">What I work with</p>
+        </div>
+        <div class="skills-content">
+          <div class="skills-categories">
+            <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+              <h3>Frontend</h3>
+              <div class="skill-items">
+                <div class="skill-item">
+                  <span class="skill-name">React</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-width="90"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">Angular</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-width="85"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">Vue.js</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-width="80"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">TypeScript</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-width="88"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+              <h3>Backend</h3>
+              <div class="skill-items">
+                <div class="skill-item">
+                  <span class="skill-name">.NET Core</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-width="92"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">Node.js</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-width="87"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">Python</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-width="75"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">C#</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-width="90"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+              <h3>Tools & Others</h3>
+              <div class="skill-items">
+                <div class="skill-item">
+                  <span class="skill-name">Docker</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-width="70"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">AWS</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-width="65"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">Git</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-width="85"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">SQL</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-width="80"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-subtitle">Some of my recent work</p>
+        </div>
+        <div class="projects-grid">
+          <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-image">
+              <img src="images/bg_1.jpg" alt="Project 1" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="#" class="project-link"
+                    ><i class="fas fa-external-link-alt"></i
+                  ></a>
+                  <a href="#" class="project-link"
+                    ><i class="fab fa-github"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>E-Commerce Platform</h3>
+              <p>
+                Full-stack e-commerce solution built with React, Node.js, and
+                MongoDB
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">MongoDB</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-image">
+              <img src="images/bg_2.jpg" alt="Project 2" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="#" class="project-link"
+                    ><i class="fas fa-external-link-alt"></i
+                  ></a>
+                  <a href="#" class="project-link"
+                    ><i class="fab fa-github"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Task Management App</h3>
+              <p>
+                Collaborative task management application with real-time updates
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">Angular</span>
+                <span class="tech-tag">.NET Core</span>
+                <span class="tech-tag">SignalR</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="project-image">
+              <img src="images/bg_3.jpg" alt="Project 3" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="#" class="project-link"
+                    ><i class="fas fa-external-link-alt"></i
+                  ></a>
+                  <a href="#" class="project-link"
+                    ><i class="fab fa-github"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Data Analytics Dashboard</h3>
+              <p>Interactive dashboard for data visualization and analytics</p>
+              <div class="project-tech">
+                <span class="tech-tag">Vue.js</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">D3.js</span>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		</footer>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">Experience</h2>
+          <p class="section-subtitle">My professional journey</p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
+            <div class="timeline-content">
+              <div class="timeline-date">2022 - Present</div>
+              <h3>Senior Software Engineer</h3>
+              <h4>Tech Company</h4>
+              <p>
+                Leading development of scalable web applications using .NET
+                Core, React, and cloud technologies. Mentoring junior developers
+                and implementing best practices.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item" data-aos="fade-left" data-aos-delay="200">
+            <div class="timeline-content">
+              <div class="timeline-date">2020 - 2022</div>
+              <h3>Software Engineer</h3>
+              <h4>Startup Company</h4>
+              <p>
+                Developed full-stack applications using Node.js, Angular, and
+                various databases. Collaborated with cross-functional teams to
+                deliver high-quality software solutions.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item" data-aos="fade-right" data-aos-delay="300">
+            <div class="timeline-content">
+              <div class="timeline-date">2019 - 2020</div>
+              <h3>Junior Developer</h3>
+              <h4>Development Agency</h4>
+              <p>
+                Started my professional journey working on various client
+                projects, learning modern web technologies and development
+                practices.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="section-subtitle">Let's work together</p>
+        </div>
+        <div class="contact-content">
+          <div
+            class="contact-info"
+            data-aos="fade-right"
+            data-aos-duration="800"
+          >
+            <h3>Let's talk about your project</h3>
+            <p>
+              I'm always interested in new opportunities and exciting projects.
+              Feel free to reach out!
+            </p>
+            <div class="contact-details">
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>safak@example.com</span>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>+1 (555) 123-4567</span>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>New York, NY</span>
+              </div>
+            </div>
+            <div class="social-links">
+              <a href="https://twitter.com/shafakyildiz" target="_blank"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="https://linkedin.com/in/safakyildiz" target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/safakyildiz" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+              <a href="https://medium.com/@safakyildiz" target="_blank"
+                ><i class="fab fa-medium"></i
+              ></a>
+            </div>
+          </div>
+          <div
+            class="contact-form"
+            data-aos="fade-left"
+            data-aos-duration="800"
+          >
+            <form id="contactForm">
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Your Name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Your Email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  placeholder="Subject"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Your Message"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Send Message
+              </button>
+            </form>
+          </div>
 	</div>
 	</div>
+    </section>
 
-	<!-- loader -->
-	<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
-			<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-			<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
-				stroke="#F96D00" />
-		</svg></div>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <p>&copy; 2024 Safak Yildiz. All rights reserved.</p>
+          <p>Built with ❤️ and modern web technologies</p>
+        </div>
+      </div>
+    </footer>
 
+    <!-- Scripts -->
 	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery-migrate-3.0.1.min.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.easing.1.3.js"></script>
-	<script src="js/jquery.waypoints.min.js"></script>
-	<script src="js/jquery.stellar.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
 	<script src="js/aos.js"></script>
-	<script src="js/jquery.animateNumber.min.js"></script>
-	<script src="js/bootstrap-datepicker.js"></script>
-	<script src="js/jquery.timepicker.min.js"></script>
-	<script src="js/scrollax.min.js"></script>
-	<script
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-	<script src="js/google-map.js"></script>
 	<script src="js/main.js"></script>
-
 </body>
-
 </html>
