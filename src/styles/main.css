@@ -360,6 +360,23 @@ html[data-theme="dark"] .sun {
 .experience button em { font-style: normal; color: var(--muted); }
 .experience button time { color: var(--muted); font-size: 0.92rem; }
 .experience li p { padding: 0 0 1.2rem; max-width: 46rem; color: var(--muted); }
+.experience-more {
+  margin-top: 2rem;
+  font-family: var(--display);
+  font-style: italic;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+.experience-more span {
+  display: block;
+  margin-top: 0.55rem;
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 0.95rem;
+  letter-spacing: 0;
+  color: var(--muted);
+}
 
 .contact {
   display: grid;

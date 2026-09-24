@@ -20,5 +20,9 @@ const open = ref(0)
         <p v-show="open === index">{{ role.text }}</p>
       </li>
     </ol>
+    <p class="experience-more reveal">
+      … and more
+      <span>Earlier roles aren’t listed here. The thread continues.</span>
+    </p>
   </section>
 </template>
