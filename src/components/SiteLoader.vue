@@ -13,14 +13,13 @@ function done(event) {
 onMounted(() => {
   if (!show.value) return
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  window.setTimeout(() => ui.finishLoad(), reduce ? 0 : 1500)
+  window.setTimeout(() => ui.finishLoad(), reduce ? 0 : 900)
 })
 </script>
 
 <template>
   <div v-if="show" class="loader" :class="{ 'is-done': ui.loaded }" @transitionend="done">
-    <p>Portfolio</p>
-    <strong>Safak Yildiz</strong>
-    <span class="loader-line"><i></i></span>
+    <span class="loader-dot"></span>
+    <p>Loading</p>
   </div>
 </template>

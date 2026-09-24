@@ -28,25 +28,16 @@ watch(
 
 <template>
   <div class="menu" :class="{ 'is-open': ui.menuOpen }" :inert="!ui.menuOpen">
-    <div class="menu-bar">
-      <span>Safak Yildiz</span>
-      <button ref="closeBtn" type="button" @click="ui.closeMenu()">Close</button>
-    </div>
-    <nav class="menu-links" aria-label="Full menu">
+    <button ref="closeBtn" type="button" class="menu-close" @click="ui.closeMenu()">Close</button>
+    <nav aria-label="Full menu">
       <a
-        v-for="(item, index) in portfolio.navigation"
+        v-for="item in portfolio.navigation"
         :key="item.id"
         :href="`#${item.id}`"
-        :style="{ '--i': index }"
         @click.prevent="ui.goTo(item.id)"
       >
-        <em>{{ item.index }}</em>
-        {{ item.label }}
+        <em>{{ item.index }}</em>{{ item.label }}
       </a>
     </nav>
-    <div class="menu-foot">
-      <a :href="`mailto:${portfolio.profile.email}`">{{ portfolio.profile.email }}</a>
-      <span>{{ portfolio.profile.location }}</span>
-    </div>
   </div>
 </template>

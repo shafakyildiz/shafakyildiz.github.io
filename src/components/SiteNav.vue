@@ -1,41 +1,34 @@
 <script setup>
-import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useUiStore } from '@/stores/ui'
+import { usePortfolioStore } from '@/stores/portfolio'
 
 const ui = useUiStore()
-const hidden = ref(false)
-const solid = ref(false)
-let lastY = 0
-
-const tone = computed(() => (solid.value || ui.menuOpen ? 'is-solid' : ''))
-
-function onScroll() {
-  const y = window.scrollY
-  solid.value = y > window.innerHeight * 0.72
-  hidden.value = y > lastY && y > 140 && !ui.menuOpen
-  lastY = y
-}
-
-onMounted(() => {
-  onScroll()
-  window.addEventListener('scroll', onScroll, { passive: true })
-})
-onUnmounted(() => window.removeEventListener('scroll', onScroll))
+const portfolio = usePortfolioStore()
+const portrait = '/images/author.jpg'
+const links = [
+  { id: 'work', label: 'Work' },
+  { id: 'about', label: 'About' },
+  { id: 'experience', label: 'Experience' },
+]
 </script>
 
 <template>
-  <header class="nav" :class="[tone, { 'is-hidden': hidden && !ui.menuOpen }]">
-    <a class="nav-mark" href="#home" @click.prevent="ui.goTo('home')">Safak</a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="#work" @click.prevent="ui.goTo('work')">Work</a>
-      <a href="#practice" @click.prevent="ui.goTo('practice')">Practice</a>
-      <a href="#craft" @click.prevent="ui.goTo('craft')">About</a>
+  <header class="nav">
+    <p class="nav-loc">{{ portfolio.profile.location }}</p>
+    <nav class="nav-pill" aria-label="Primary">
+      <img :src="portrait" alt="" />
+      <a
+        v-for="link in links"
+        :key="link.id"
+        :href="`#${link.id}`"
+        :class="{ 'is-on': ui.activeSection === link.id }"
+        @click.prevent="ui.goTo(link.id)"
+      >{{ link.label }}</a>
     </nav>
     <div class="nav-end">
-      <a class="nav-quiet" href="#journey" @click.prevent="ui.goTo('journey')">Journey</a>
-      <a class="nav-pill" href="#contact" @click.prevent="ui.goTo('contact')">Enquire</a>
-      <button class="nav-menu" type="button" :aria-expanded="ui.menuOpen" @click="ui.toggleMenu()">
-        {{ ui.menuOpen ? 'Close' : 'Menu' }}
+      <a class="nav-cta" href="#contact" @click.prevent="ui.goTo('contact')">Work with me</a>
+      <button class="nav-burger" type="button" :aria-expanded="ui.menuOpen" @click="ui.toggleMenu()">
+        Menu
       </button>
     </div>
   </header>

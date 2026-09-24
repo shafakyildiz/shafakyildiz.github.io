@@ -13,24 +13,21 @@ export const usePortfolioStore = defineStore('portfolio', {
       phoneHref: 'tel:+905069936411',
     },
     lede: 'Vast in scope, exact in the details — software shaped for the people who rely on it.',
-    bio: 'I am a solution-oriented software engineer with more than seven years in full-stack development. I hold a master’s degree in Software Engineering from Hacettepe University, and I have shipped products at Limak Technology, Huawei, and Arksoft. The work sits in React, .NET, and Node.js, and in mobile with React Native and Flutter.',
+    careerStart: 2017,
     statement:
       'The quiet parts matter. A product should feel inevitable — fast, calm, and exact — so the person using it never has to think about the machinery.',
     stats: [
-      { value: 7, suffix: '+', label: 'Years in practice' },
       { value: 15, label: 'Products shipped' },
       { value: 5, label: 'Companies' },
     ],
     navigation: [
       { id: 'home', label: 'Home', index: '00' },
-      { id: 'craft', label: 'About', index: '01' },
-      { id: 'work', label: 'Work', index: '02' },
-      { id: 'note', label: 'Note', index: '03' },
-      { id: 'practice', label: 'Practice', index: '04' },
-      { id: 'journey', label: 'Journey', index: '05' },
-      { id: 'process', label: 'Process', index: '06' },
-      { id: 'contact', label: 'Enquire', index: '07' },
+      { id: 'work', label: 'Work', index: '01' },
+      { id: 'about', label: 'About', index: '02' },
+      { id: 'experience', label: 'Experience', index: '03' },
+      { id: 'contact', label: 'Contact', index: '04' },
     ],
+    stack: ['React', 'React Native', '.NET', 'Node.js', 'Flutter', 'Angular', 'MongoDB', 'PostgreSQL', 'AWS', 'Docker'],
     projects: [
       {
         name: 'WeSight',
@@ -83,15 +80,22 @@ export const usePortfolioStore = defineStore('portfolio', {
     ],
     experience: [
       {
+        company: 'PixelCodex',
+        role: 'Senior Software Consultant',
+        dates: 'Jan 2026 — Present',
+        code: 'PXC',
+        text: 'Senior software consulting.',
+      },
+      {
         company: 'Limak Technology',
-        role: 'Software Engineer',
-        dates: 'May 2024 — Present',
+        role: 'Senior Software Engineer',
+        dates: 'May 2024 — Dec 2025',
         code: 'LMT',
         text: 'Electricity trading applications for energy companies, plus web and mobile CRM and ERP for holdings. React, React Native, .NET, MsSQL, PostgreSQL, and Azure Pipelines.',
       },
       {
         company: 'Huawei',
-        role: 'Software Engineer',
+        role: 'Senior Software Engineer',
         dates: 'Sep 2022 — May 2024',
         code: 'HUA',
         text: 'WeSight and Hire.io — single-page products for health, safety, and hiring. React, Node.js, Express, NestJS, MongoDB, AWS, Docker, Jenkins, and Kubernetes.',
@@ -142,4 +146,10 @@ export const usePortfolioStore = defineStore('portfolio', {
       { label: 'Medium', href: 'https://medium.com/@safakyildiz' },
     ],
   }),
+  getters: {
+    years: (state) => new Date().getFullYear() - state.careerStart,
+    bio() {
+      return `I am a solution-oriented software engineer with ${this.years} years in full-stack development. I hold a master’s degree in Software Engineering from Hacettepe University. I am a Senior Software Consultant at PixelCodex, after shipping products at Limak Technology, Huawei, and Arksoft. The work sits in React, .NET, and Node.js, and in mobile with React Native and Flutter.`
+    },
+  },
 })
