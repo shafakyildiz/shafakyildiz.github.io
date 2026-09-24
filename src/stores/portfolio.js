@@ -40,7 +40,6 @@ export const usePortfolioStore = defineStore('portfolio', {
         stack: 'React · Node.js · MongoDB · AWS',
         summary:
           'AI-based PPE monitoring, tied to IP cameras, for health and safety teams inside an organization.',
-        href: 'https://wesight.io',
         image: '/images/bg_2.jpg',
         position: 'center',
       },
