@@ -240,14 +240,16 @@ h2 {
   border-radius: 28px;
   overflow: hidden;
   background: #efe8dc;
+  display: grid;
+  place-items: center;
 }
 .work-card img {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  height: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+  object-position: center;
 }
-.work-card a:hover img { transform: scale(1.04); }
 .work-card h3 {
   margin-top: 0.85rem;
   font-size: 1.45rem;
