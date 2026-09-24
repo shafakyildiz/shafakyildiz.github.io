@@ -48,6 +48,11 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+  server: {
+    watch: {
+      ignored: ['**/images/**'],
+    },
+  },
   build: {
     outDir: 'dist',
     emptyOutDir: true,

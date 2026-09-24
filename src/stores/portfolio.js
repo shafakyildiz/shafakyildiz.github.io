@@ -62,6 +62,14 @@ export const usePortfolioStore = defineStore('portfolio', {
         image: '/images/bg_1.jpg',
         position: 'center bottom',
       },
+      {
+        name: 'Inventory Management',
+        tag: 'Product',
+        summary:
+          'Tracks stock in real time, automates reordering, and reports sales and stock movement. It reduces stockouts and overstock, and connects with accounting and sales systems.',
+        image: '/images/bg5.png',
+        position: 'center top',
+      },
     ],
     disciplines: [
       {
