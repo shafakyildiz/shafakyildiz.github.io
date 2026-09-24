@@ -14,6 +14,11 @@ export const usePortfolioStore = defineStore('portfolio', {
     },
     lede: 'Vast in scope, exact in the details — software shaped for the people who rely on it.',
     careerStart: 2017,
+    certifications: [
+      'AWS Certified Cloud Practitioner',
+      'Professional Scrum Master I',
+      'Professional Scrum Product Owner I',
+    ],
     statement:
       'The quiet parts matter. A product should feel inevitable — fast, calm, and exact — so the person using it never has to think about the machinery.',
     stats: [
@@ -149,7 +154,7 @@ export const usePortfolioStore = defineStore('portfolio', {
   getters: {
     years: (state) => new Date().getFullYear() - state.careerStart,
     bio() {
-      return `I am a solution-oriented software engineer with ${this.years} years in full-stack development. I hold a master’s degree in Software Engineering from Hacettepe University. I am a Senior Software Consultant at PixelCodex, after shipping products at Limak Technology, Huawei, and Arksoft. The work sits in React, .NET, and Node.js, and in mobile with React Native and Flutter.`
+      return `I am a solution-oriented software engineer with ${this.years} years in full-stack development. I hold a master’s degree in Software Engineering from Hacettepe University, plus AWS Certified Cloud Practitioner, Professional Scrum Master I (PSM I), and Professional Scrum Product Owner I (PSPO I). I am a Senior Software Consultant at PixelCodex, after shipping products at Limak Technology, Huawei, and Arksoft. The work sits in React, .NET, and Node.js, and in mobile with React Native and Flutter.`
     },
   },
 })

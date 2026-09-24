@@ -14,6 +14,9 @@ const portrait = '/images/author.jpg'
       <p class="kicker reveal">About</p>
       <h2 class="reveal">{{ portfolio.years }} years building products people rely on.</h2>
       <p class="reveal">{{ portfolio.bio }}</p>
+      <ul class="certs reveal">
+        <li v-for="cert in portfolio.certifications" :key="cert">{{ cert }}</li>
+      </ul>
       <ul class="chips reveal">
         <li v-for="item in portfolio.disciplines" :key="item.title">
           <strong>{{ item.title }}</strong>
