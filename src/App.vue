@@ -14,6 +14,7 @@ import ContactSection from '@/components/ContactSection.vue'
 import SiteFooter from '@/components/SiteFooter.vue'
 
 const ui = useUiStore()
+ui.applyTheme()
 useReveal()
 useActiveSection()
 

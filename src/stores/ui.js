@@ -3,6 +3,7 @@ import { usePortfolioStore } from './portfolio'
 
 export const useUiStore = defineStore('ui', {
   state: () => ({
+    theme: localStorage.getItem('sy-theme') === 'dark' ? 'dark' : 'light',
     menuOpen: false,
     loaded: sessionStorage.getItem('sy-loaded') === '1',
     activeSection: 'home',
@@ -24,6 +25,18 @@ export const useUiStore = defineStore('ui', {
     },
     toggleMenu() {
       this.menuOpen = !this.menuOpen
+    },
+    applyTheme() {
+      document.documentElement.dataset.theme = this.theme
+      localStorage.setItem('sy-theme', this.theme)
+      document.querySelector('meta[name="theme-color"]')?.setAttribute(
+        'content',
+        this.theme === 'dark' ? '#12141a' : '#fff9f1',
+      )
+    },
+    toggleTheme() {
+      this.theme = this.theme === 'dark' ? 'light' : 'dark'
+      this.applyTheme()
     },
     finishLoad() {
       this.loaded = true

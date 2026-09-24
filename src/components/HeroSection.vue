@@ -26,7 +26,9 @@ onUnmounted(() => window.clearInterval(timer))
     <p class="hero-kicker">Hello, I’m {{ portfolio.profile.firstName }} {{ portfolio.profile.lastName }}. An—</p>
     <h1>
       <span>Engineer who</span>
-      <span class="hero-swap">{{ word }}</span>
+      <span class="hero-swap">
+        <span :key="word" class="hero-word">{{ word }}</span>
+      </span>
     </h1>
     <p class="hero-side">React / .NET / Node</p>
   </section>

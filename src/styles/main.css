@@ -6,9 +6,39 @@
   --sky: #7eb6ef;
   --sky-deep: #5aa4e8;
   --yellow: #f5c518;
+  --nav: #16324a;
+  --pill: rgba(255, 249, 241, 0.78);
+  --pill-on: #ffffff;
+  --cta-bg: #111111;
+  --cta-ink: #ffffff;
+  --hero-top: #8ec8f6;
+  --hero-mid: #b7daf8;
+  --hero-ink: #fffaf3;
+  --cloud: #fff9f1;
+  --frame: #efe8dc;
+  --marquee: #8a847c;
   --sans: "Space Grotesk", "Avenir Next", sans-serif;
   --display: "Fraunces", Georgia, serif;
   --pad: clamp(1.1rem, 4vw, 3.5rem);
+}
+
+html[data-theme="dark"] {
+  --paper: #12141a;
+  --ink: #f4efe6;
+  --muted: #b7b1a6;
+  --line: rgba(244, 239, 230, 0.16);
+  --nav: #f4efe6;
+  --pill: rgba(22, 24, 31, 0.82);
+  --pill-on: #2a2e38;
+  --cta-bg: #f4efe6;
+  --cta-ink: #12141a;
+  --hero-top: #10243f;
+  --hero-mid: #1a3354;
+  --hero-ink: #f4efe6;
+  --cloud: #1c2636;
+  --frame: #1e232c;
+  --marquee: #8d877e;
+  color-scheme: dark;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -85,7 +115,7 @@ h2 {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  color: #16324a;
+  color: var(--nav);
 }
 .nav-loc { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; }
 .nav-pill {
@@ -93,7 +123,7 @@ h2 {
   align-items: center;
   gap: 0.35rem;
   padding: 0.35rem 0.45rem 0.35rem 0.35rem;
-  background: rgba(255, 249, 241, 0.78);
+  background: var(--pill);
   border-radius: 999px;
   backdrop-filter: blur(10px);
 }
@@ -110,11 +140,23 @@ h2 {
   font-size: 0.92rem;
 }
 .nav-pill a.is-on,
-.nav-pill a:hover { background: #fff; }
-.nav-end { justify-self: end; display: flex; gap: 0.5rem; }
+.nav-pill a:hover { background: var(--pill-on); }
+.nav-end { justify-self: end; display: flex; align-items: center; gap: 0.5rem; }
+.theme-toggle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--pill);
+  color: var(--nav);
+  display: grid;
+  place-items: center;
+}
+.theme-toggle svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+html[data-theme="dark"] .theme-toggle svg { fill: currentColor; stroke: none; }
 .nav-cta, .btn {
-  background: #111;
-  color: #fff;
+  background: var(--cta-bg);
+  color: var(--cta-ink);
   border-radius: 999px;
   padding: 0.7rem 1.05rem;
   font-size: 0.92rem;
@@ -153,8 +195,8 @@ h2 {
   place-items: center;
   text-align: center;
   overflow: hidden;
-  background: linear-gradient(180deg, #8ec8f6 0%, #b7daf8 58%, var(--paper) 100%);
-  color: #fffaf3;
+  background: linear-gradient(180deg, var(--hero-top) 0%, var(--hero-mid) 58%, var(--paper) 100%);
+  color: var(--hero-ink);
   padding: 7rem var(--pad) 4rem;
 }
 .hero h1 {
@@ -166,7 +208,19 @@ h2 {
   line-height: 0.9;
   letter-spacing: -0.035em;
 }
-.hero-swap { display: block; }
+.hero-swap {
+  display: block;
+  overflow: hidden;
+  line-height: 0.95;
+}
+.hero-word {
+  display: block;
+  animation: word-rise 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes word-rise {
+  from { transform: translateY(110%); }
+  to { transform: translateY(0); }
+}
 .hero-kicker {
   position: relative;
   z-index: 2;
@@ -204,9 +258,13 @@ h2 {
   border-radius: 50%;
   background: repeating-linear-gradient(-32deg, var(--yellow) 0 10px, transparent 10px 18px);
 }
+html[data-theme="dark"] .sun {
+  background: #f4efe6;
+  box-shadow: -28px 10px 0 -8px var(--hero-top);
+}
 .cloud {
   position: absolute;
-  background: #fff9f1;
+  background: var(--cloud);
   border-radius: 50%;
   z-index: 1;
 }
@@ -226,7 +284,7 @@ h2 {
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #8a847c;
+  color: var(--marquee);
 }
 .marquee span { white-space: nowrap; }
 @keyframes ticker { to { transform: translateX(-50%); } }
@@ -239,7 +297,7 @@ h2 {
 .work-card figure {
   border-radius: 28px;
   overflow: hidden;
-  background: #efe8dc;
+  background: var(--frame);
   display: grid;
   place-items: center;
 }
@@ -249,7 +307,10 @@ h2 {
   aspect-ratio: 16 / 10;
   object-fit: contain;
   object-position: center;
+  transform: scale(1);
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
+.work-card:hover img { transform: scale(1.08); }
 .work-card h3 {
   margin-top: 0.85rem;
   font-size: 1.45rem;
